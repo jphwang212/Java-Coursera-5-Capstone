@@ -11,11 +11,11 @@ import java.util.*;
 public class Rater {
     private String myID;
     private ArrayList<Rating> myRatings;
-    private int myHash;
+//    private int myHash;
 
     public Rater(String id) {
         myID = id;
-        myHash = hashCode();
+//        myHash = hashCode();
         myRatings = new ArrayList<Rating>();
     }
 
@@ -60,25 +60,26 @@ public class Rater {
         return list;
     }
 
-    public int length() {
-        return myRatings.size();
-    }
-    public int hashCode() {
-        String rater = this.toString();
-        return rater.hashCode();
-    }
-    public boolean equals(Object o) {
-        Rater rater = (Rater) o;
-        if (this.length() != rater.length()) {
-            return false;
-        }
-        for (int i = 0; i < myRatings.size(); i++) {
-            if (!myRatings.get(i).equals(rater.myID)) {
-                return false;
-            }
-        }
-        return true;
-    }
+//    public int length() {
+//        return myRatings.size();
+//    }
+//    public int hashCode() {
+//        String rater = this.toString();
+//        return rater.hashCode();
+//    }
+//    public boolean equals(Object o) {
+//        Rater rater = (Rater) o;
+//        if (this.length() != rater.length()) {
+//            return false;
+//        }
+//        for (int i = 0; i < myRatings.size(); i++) {
+//            String rating = myRatings.get(i).toString();
+//            if (!rating.equals(rater.getID())) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
     public String toString() {
         return myID;
     }

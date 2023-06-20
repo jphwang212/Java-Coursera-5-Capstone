@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 public class FirstRatings {
     public ArrayList<Rater> loadRaters(String filename) {
+        HashMap<String, Rater> raterMap = new HashMap<String, Rater>();
         ArrayList<Rater> raterData = new ArrayList<Rater>();
         DirectoryResource dr = new DirectoryResource();
         for (File file : dr.selectedFiles()) {
@@ -16,19 +17,20 @@ public class FirstRatings {
                     String movieId = record.get("movie_id");
                     double rating = Integer.parseInt(record.get("rating"));
                     Rater rater = new Rater(raterId);
-                    if (raterData.contains(rater)) {
-                        int idx = raterData.indexOf(rater);
-                        rater = raterData.get(idx);
+                    if (!raterMap.containsKey(raterId)) {
+                        rater.addRating(movieId, rating);
+                        raterMap.put(raterId, rater);
+                    } else {
+                        rater = raterMap.get(raterId);
                         if (!rater.hasRating(movieId)) {
                             rater.addRating(movieId, rating);
-                            raterData.add(rater);
                         }
-                    } else {
-                        rater.addRating(movieId, rating);
-                        raterData.add(rater);
                     }
                 }
             }
+        }
+        for (String raterId : raterMap.keySet()) {
+            raterData.add(raterMap.get(raterId));
         }
         return raterData;
     }
@@ -70,7 +72,7 @@ public class FirstRatings {
 //        }
     }
     public void testLoadRaters() {
-        ArrayList<Rater> raterData = loadRaters("ratings_short.csv");
+        ArrayList<Rater> raterData = loadRaters("ratings.csv");
         System.out.println("There are " + raterData.size() + " raters.");
         for (Rater rater : raterData) {
             System.out.print(rater.getID() + " ");
