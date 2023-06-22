@@ -9,9 +9,9 @@ public class MovieRunnerAverage {
         System.out.println("There are " + moviesLength + " movies.");
         System.out.println("There are " + ratingsLength + " ratings.");
         // Print movies with enough ratings
-        ArrayList<Rating> ratings = second.getAverageRatings(12);
+        ArrayList<Rating> ratings = second.getAverageRatings(1);
         Collections.sort(ratings);
-        System.out.println(ratings.size() + " movies with >= 12 ratings.");
+        System.out.println(ratings.size() + " movies with >= 1 ratings.");
         for (Rating rating : ratings) {
             String title = second.getTitle(rating.getItem());
             System.out.println(rating.getValue() + " " + title);

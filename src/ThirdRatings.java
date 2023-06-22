@@ -1,47 +1,18 @@
 import java.util.ArrayList;
 
-/**
- * Second step of Capstone.
- *
- * @jphwang212
- * @20230621
- */
-
-public class SecondRatings {
-    private ArrayList<Movie> myMovies;
+public class ThirdRatings {
     private ArrayList<Rater> myRaters;
 
-    public SecondRatings() {
-        // default constructor
-        this("ratedmovies_short.csv", "ratings_short.csv");
+    public ThirdRatings() {
+        this("ratings_short.csv");
     }
-    public SecondRatings(String moviefile, String ratingsfile) {
+    public ThirdRatings(String ratingsfile) {
         FirstRatings first = new FirstRatings();
-        myMovies = first.loadMovies(moviefile);
         myRaters = first.loadRaters(ratingsfile);
     }
 
-    public int getMovieSize() {
-        return myMovies.size();
-    }
     public int getRaterSize() {
         return myRaters.size();
-    }
-    public String getTitle(String id) {
-        for (Movie movie : myMovies) {
-            if (id.equals(movie.getID())) {
-                return movie.getTitle();
-            }
-        }
-        return "Movie with id " + id + " not found.";
-    }
-    public String getID(String title) {
-        for (Movie movie : myMovies) {
-            if (title.equals(movie.getTitle())) {
-                return movie.getID();
-            }
-        }
-        return "NO SUCH TITLE.";
     }
 
     private double getAverageByID(String id, int minimalRaters) {
@@ -61,9 +32,10 @@ public class SecondRatings {
     }
 
     public ArrayList<Rating> getAverageRatings(int minimalRaters) {
+        ArrayList<String> movies = MovieDatabase.filterBy(new TrueFilter());
         ArrayList<Rating> averages = new ArrayList<Rating>();
-        for (Movie movie : myMovies) {
-            String id = movie.getID();
+
+        for (String id : movies) {
             double avgRating = getAverageByID(id, minimalRaters);
             if (avgRating > 0.0) {
                 Rating rating = new Rating(id, avgRating);
@@ -73,4 +45,13 @@ public class SecondRatings {
         return averages;
     }
 
+    public static void main(String[] args) {
+        ThirdRatings inst = new ThirdRatings("ratings_short.csv");
+        MovieDatabase.initialize("ratedmovies_short.csv");
+        ArrayList<Rating> ratings = inst.getAverageRatings(1);
+        System.out.println(ratings.size() + " ratings.");
+        for (Rating rating : ratings) {
+            System.out.println(rating.toString());
+        }
+    }
 }

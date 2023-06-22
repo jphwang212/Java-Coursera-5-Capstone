@@ -1,7 +1,6 @@
 import edu.duke.*;
 import org.apache.commons.csv.*;
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.*;
 public class FirstRatings {
     public ArrayList<Rater> loadRaters(String filename) {
@@ -16,7 +15,7 @@ public class FirstRatings {
                     String raterId = record.get("rater_id");
                     String movieId = record.get("movie_id");
                     double rating = Integer.parseInt(record.get("rating"));
-                    Rater rater = new Rater(raterId);
+                    Rater rater = new EfficientRater(raterId);
                     if (!raterMap.containsKey(raterId)) {
                         rater.addRating(movieId, rating);
                         raterMap.put(raterId, rater);
