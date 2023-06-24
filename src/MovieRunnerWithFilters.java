@@ -17,9 +17,46 @@ public class MovieRunnerWithFilters {
             System.out.println(rating.getValue() + " " + title);
         }
     }
+    public void printAverageRatingsByYear() {
+        ThirdRatings third = new ThirdRatings();
+        MovieDatabase.initialize("ratedmovies_short.csv");
+        YearAfterFilter yearFilter = new YearAfterFilter(2000);
+        ArrayList<Rating> filtered = third.getAverageRatingsByFilter(1, yearFilter);
+        System.out.println("Found " + filtered.size() + " movies.");
+        for (Rating rating : filtered) {
+            String title = MovieDatabase.getTitle(rating.getItem());
+            System.out.println(rating.getValue() + " " + title);
+        }
+    }
 
+    public void printAverageRatingsByGenre() {
+        ThirdRatings third = new ThirdRatings();
+        MovieDatabase.initialize("ratedmovies_short.csv");
+        GenreFilter genreFilter = new GenreFilter("Crime");
+        ArrayList<Rating> filtered = third.getAverageRatingsByFilter(1, genreFilter);
+        System.out.println("Found " + filtered.size() + " movies.");
+        for (Rating rating : filtered) {
+            String title = MovieDatabase.getTitle(rating.getItem());
+            System.out.println(rating.getValue() + " " + title);
+        }
+    }
+
+    public void printAverageRatingsByMinutes() {
+        ThirdRatings third = new ThirdRatings();
+        MovieDatabase.initialize("ratedmovies_short.csv");
+        MinutesFilter minFilter = new MinutesFilter(100, 170);
+        ArrayList<Rating> filtered = third.getAverageRatingsByFilter(1, minFilter);
+        System.out.println("Found " + filtered.size() + " movies.");
+        for (Rating rating : filtered) {
+            String title = MovieDatabase.getTitle(rating.getItem());
+            System.out.println(rating.getValue() + " " + title);
+        }
+    }
     public static void main(String[] args) {
         MovieRunnerWithFilters inst = new MovieRunnerWithFilters();
-        inst.printAverageRatings();
+//        inst.printAverageRatings();
+//        inst.printAverageRatingsByYear();
+//        inst.printAverageRatingsByGenre();
+        inst.printAverageRatingsByMinutes();
     }
 }

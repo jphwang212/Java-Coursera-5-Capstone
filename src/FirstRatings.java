@@ -64,7 +64,7 @@ public class FirstRatings {
     }
 
     public void testLoadMovies() {
-        ArrayList<Movie> movieData = loadMovies("ratedmoviesfull.csv");
+        ArrayList<Movie> movieData = loadMovies("ratedmovies_short.csv");
         System.out.println("There are " + movieData.size() + " movies.");
 //        for (Movie movie : movieData) {
 //            System.out.print(movie + " ");
@@ -113,7 +113,7 @@ public class FirstRatings {
         System.out.println(directorLargest.toString() + " directors had movies with size " + largestSize);
     }
     public void testLoadRaters() {
-        ArrayList<Rater> raterData = loadRaters("ratings.csv");
+        ArrayList<Rater> raterData = loadRaters("ratings_short.csv");
         System.out.println("There are " + raterData.size() + " raters.");
         String raterId = "193";
         String movieId = "1798709";
@@ -155,7 +155,7 @@ public class FirstRatings {
 
     public static void main(String[] args) {
         FirstRatings inst = new FirstRatings();
-//        inst.testLoadMovies();
-        inst.testLoadRaters();
+        inst.testLoadMovies();
+//        inst.testLoadRaters();
     }
 }

@@ -6,17 +6,16 @@ public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
 
     public static void initialize(String moviefile) {
-        System.out.println(moviefile);
         if (ourMovies == null) {
             ourMovies = new HashMap<String,Movie>();
-            loadMovies("data/" + moviefile);
+            loadMovies(moviefile);
         }
     }
 
     private static void initialize() {
         if (ourMovies == null) {
             ourMovies = new HashMap<String,Movie>();
-            loadMovies("data/ratedmovies_short.csv");
+            loadMovies("ratedmovies_short.csv");
         }
     }	
 

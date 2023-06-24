@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31dcb7b6-c333-4c57-8006-3cbc43896375" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AllFilters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EfficientRater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MovieDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MovieRunnerWithFilters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PlainRater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThirdRatings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TrueFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/YearAfterFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GenreFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MinutesFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FirstRatings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstRatings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieRunnerAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRunnerAverage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SecondRatings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SecondRatings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRunnerWithFilters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRunnerWithFilters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThirdRatings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThirdRatings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +55,7 @@
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ThirdRatings">
+  <component name="RunManager" selected="Application.MovieRunnerWithFilters">
     <configuration name="FirstRatings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FirstRatings" />
       <module name="Java-Coursera-5-Capstone" />
@@ -94,10 +86,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ThirdRatings" />
-        <item itemvalue="Application.MovieRunnerAverage" />
         <item itemvalue="Application.MovieRunnerWithFilters" />
+        <item itemvalue="Application.ThirdRatings" />
         <item itemvalue="Application.FirstRatings" />
+        <item itemvalue="Application.MovieRunnerAverage" />
       </list>
     </recent_temporary>
   </component>

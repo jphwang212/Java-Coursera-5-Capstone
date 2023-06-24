@@ -45,11 +45,24 @@ public class ThirdRatings {
         return averages;
     }
 
+    public ArrayList<Rating> getAverageRatingsByFilter(int minimalRaters, Filter filterCriteria) {
+        ArrayList<String> movies = MovieDatabase.filterBy(filterCriteria);
+        ArrayList<Rating> averages = new ArrayList<Rating>();
+        for (String s : movies) {
+            double avgRating = getAverageByID(s, minimalRaters);
+            if (avgRating > 0.0) {
+                Rating rating = new Rating(s, avgRating);
+                averages.add(rating);
+
+            }
+        }
+        return averages;
+    }
+
     public static void main(String[] args) {
         ThirdRatings inst = new ThirdRatings("ratings_short.csv");
         MovieDatabase.initialize("ratedmovies_short.csv");
         ArrayList<Rating> ratings = inst.getAverageRatings(1);
-        System.out.println(ratings.size() + " ratings.");
         for (Rating rating : ratings) {
             System.out.println(rating.toString());
         }
